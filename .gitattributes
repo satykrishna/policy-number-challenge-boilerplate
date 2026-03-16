@@ -1,0 +1,21 @@
+# Keep repository text files deterministic across OSes.
+* text=auto
+
+# Enforce LF for code and text assets used in tests/fixtures.
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.txt text eol=lf
+*.sh text eol=lf
+*.dockerfile text eol=lf
+Dockerfile text eol=lf
+
+# Windows batch files should keep CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets
+*.pdf binary
+
