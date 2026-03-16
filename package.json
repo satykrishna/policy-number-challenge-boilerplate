@@ -1,0 +1,27 @@
+{
+  "name": "policy-number-challenge-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OCR policy number challenge implemented in Node.js",
+  "type": "module",
+  "bin": {
+    "policy-ocr": "./bin/ocr.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "coverage": "c8 --all --include \"src/ocr/**/*.js\" --reporter=text --reporter=lcov node --test",
+    "test:coverage": "c8 --all --include \"src/ocr/**/*.js\" --check-coverage --lines 98 --functions 98 --branches 98 --statements 98 node --test",
+    "start": "node ./bin/ocr.js",
+    "us1": "node ./bin/ocr.js --story us1 ./test/fixtures/us1/us1_input_sample1.txt",
+    "us2": "node ./bin/ocr.js --story us2 ./test/fixtures/us2/us2_input_sample.txt",
+    "us3": "node ./bin/ocr.js --story us3 ./test/fixtures/us3/us3_input_sample.txt",
+    "us4": "node ./bin/ocr.js --story us4 ./test/fixtures/us4/us4_input_sample.txt"
+  },
+  "devDependencies": {
+    "c8": "^11.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
+

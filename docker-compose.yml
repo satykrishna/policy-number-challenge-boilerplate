@@ -1,0 +1,32 @@
+x-ocr-base: &ocr-base
+  build:
+    context: .
+    target: runtime
+  image: policy-ocr:latest
+  volumes:
+    - ./:/work
+
+services:
+  # Generic runner: pass story/input/output at runtime.
+  # Example:
+  # docker compose run --rm ocr --story us1 /work/test/fixtures/us1/us1_input_sample1.txt --out /work/tmp_us1_out.txt
+  ocr:
+    <<: *ocr-base
+
+  # Optional story shortcuts with fixture defaults.
+  us1:
+    <<: *ocr-base
+    command: ["--story", "us1", "/work/test/fixtures/us1/us1_input_sample1.txt", "--out", "/work/tmp_us1_out.txt"]
+
+  us2:
+    <<: *ocr-base
+    command: ["--story", "us2", "/work/test/fixtures/us2/us2_input_sample.txt", "--out", "/work/tmp_us2_out.txt"]
+
+  us3:
+    <<: *ocr-base
+    command: ["--story", "us3", "/work/test/fixtures/us3/us3_input_sample.txt", "--out", "/work/tmp_us3_out.txt"]
+
+  us4:
+    <<: *ocr-base
+    command: ["--story", "us4", "/work/test/fixtures/us4/us4_input_sample.txt", "--out", "/work/tmp_us4_out.txt"]
+
